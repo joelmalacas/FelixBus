@@ -1,0 +1,640 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f4f6f7; /* Tom sutil para a página */
+    color: #34495e;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed; /* Sidebar fixa */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Scroll se o conteúdo for maior que a altura */
+}
+
+/* Título da sidebar */
+.sidebar h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Botões dentro do formulário */
+.sidebar form button {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #ecf0f1;
+    background-color: #34495e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+/* Efeito hover nos botões */
+.sidebar form button:hover {
+    background-color: #1abc9c;
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+/* Link de navegação (opcional) */
+.sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #1abc9c;
+}
+
+/* Conteúdo principal */
+.main-content {
+    margin-left: 270px; /* Compensar a largura da sidebar */
+    padding: 20px;
+    background-color: #ecf0f1;
+    min-height: 100vh;
+}
+
+/* Estilização do título principal */
+.main-content h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Texto principal */
+.main-content p {
+    color: #34495e;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Reduz largura no mobile */
+    }
+    
+    .main-content {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%; /* Sidebar ocupa toda a largura */
+        height: auto;
+        position: static; /* Deixa fluido no mobile */
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+.table-container {
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #035fc2;
+    color: #fff;
+}
+
+thead th {
+    text-align: left;
+    padding: 12px 16px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+tbody td {
+    padding: 12px 16px;
+    color: #333;
+}
+
+tbody td:first-child {
+    font-weight: bold;
+    text-align: left;
+}
+
+.table-container h2 {
+    text-align: center;
+    padding: 16px;
+    margin: 0;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 24px;
+}
+
+#Rota{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para os campos de entrada */
+#Rota input,
+#Rota textarea,
+#Rota select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao focar nos campos de entrada */
+#Rota input:focus
+#Rota textarea:focus,
+#Rota select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Estilo para o botão de envio */
+#Rota input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no botão de envio */
+#Rota input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Estilo dos campos do formulário */
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Botão de envio */
+.form-container input[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Mensagem do placeholder */
+::placeholder {
+    color: #aaa;
+}
+
+/* Estilo geral do formulário */
+#Update {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do campo de pesquisa */
+#Update input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+#Update input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo do dropdown (select) */
+#Update select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+#Update select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilo do botão */
+#Update input[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#Update input[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#Update input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Centraliza o contêiner */
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: #f5f5f5; /* Cor de fundo neutra */
+    margin: 0;
+  }
+  
+  /* Estilo do input */
+  #searchInput {
+    width: 300px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Foco no input */
+  #searchInput:focus {
+    border-color: #0078ff; /* Cor de destaque */
+    box-shadow: 0px 4px 10px rgba(0, 120, 255, 0.3);
+  }
+  
+  /* Placeholder */
+  #searchInput::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+
+  #searchButton {
+    /* Visual e layout */
+    background-color: #007BFF; /* Verde elegante */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 30%;
+
+    /* Transição para interatividade */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#searchButton:hover {
+    /* Cor ao passar o mouse */
+    background-color: #0078ff; /* Verde mais escuro */
+    transform: scale(1.05); /* Efeito de crescimento */
+    border-radius: 5%;
+}
+
+#searchButton:active {
+    /* Aparência ao clicar */
+    background-color: #007BFF; /* Verde ainda mais escuro */
+    transform: scale(0.95); /* Efeito de compressão */
+}
+
+#searchButton:focus {
+    /* Foco visível para acessibilidade */
+    outline: 2px solid #0078ff; /* Cor compatível com o verde */
+    outline-offset: 2px;
+}
+
+/* Header container */
+.alert-header {
+    background-color: #f44336; /* Vermelho para alerta de erro */
+    color: white; /* Texto branco */
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Alert icon */
+.alert-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Alert message */
+.alert-message {
+    font-size: 16px;
+    text-align: center; /* Centraliza a mensagem */
+}
+
+/* Close button */
+.alert-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Efeito ao passar o mouse no botão de fechar */
+.alert-close:hover {
+    transform: scale(1.2);
+}
+
+/* Exemplo para diferentes tipos de alerta */
+.alert-success {
+    background-color: #4CAF50; /* Verde para sucesso */
+}
+
+.alert-warning {
+    background-color: #ff9800; /* Amarelo para aviso */
+}
+
+.alert-info {
+    background-color: #2196F3; /* Azul para informação */
+}
+
+/* Estilo do formulário de perfil */
+.profile-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limita a largura do formulário */
+    margin-top: 20px; /* Pode ser removido se não necessário */
+    margin-left: calc(50% - 200px);
+}
+
+/* Título do formulário */
+.profile-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos campos de entrada */
+.profile-form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="tel"],
+.profile-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+.profile-form input[type="text"]:focus,
+.profile-form input[type="email"]:focus,
+.profile-form input[type="tel"]:focus,
+.profile-form input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilo do botão de submit */
+.profile-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.profile-form button[type="submit"]:active {
+    background-color: #003f7d;
+}
+
+/* Card container styles */
+.card {
+    background-color: #ffffff;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Title styling */
+.card-title {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+/* Detail styling */
+.card-detail {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+/* Form styles */
+.card-form {
+    margin-top: 15px;
+}
+
+/* Button styles */
+.card-form .btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-form .btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-detail {
+        font-size: 0.9rem;
+    }
+
+    .card-form .btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    #Update {
+        padding: 1rem;
+    }
+
+    #Update input[type="search"],
+    #Update select,
+    #Update input[type="submit"] {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    #Rota {
+        padding: 15px;
+    }
+
+    #Rota input[type="submit"] {
+        font-size: 14px;
+    }
+}

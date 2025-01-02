@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Registro</title>
+    <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="shortcut icon" href="../paginas/Media/FelixBusLogo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Criar Conta</h1>
+        <form action="../paginas/scripts/signup.php" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="nif">NIF</label>
+                <input type="text" id="nif" name="nif" required pattern="\d{9}" title="O NIF deve conter exatamente 9 dígitos.">
+                <small class="small-text">O NIF deve conter exatamente 9 dígitos.</small>
+            </div>
+            <div class="form-group">
+                <label for="telemovel">Telemóvel</label>
+                <input type="tel" id="telemovel" name="telemovel" required pattern="\d{9}" title="O número de telemóvel deve conter exatamente 9 dígitos.">
+                <small class="small-text">O número de telemóvel deve conter exatamente 9 dígitos.</small>
+            </div>
+            <div class="form-button">
+                <button type="submit">Criar conta</button>
+            </div>
+            <div class="form-link">
+                <a href="../paginas/login.html">Já tem conta?</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
